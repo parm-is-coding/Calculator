@@ -36,3 +36,4 @@ console.log(operate(num1,opp2,num2));
 console.log(operate(num1,opp3,num2));
 console.log(operate(num1,opp4,num2));
 
+const container = document.querySelector("#container");
