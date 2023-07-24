@@ -37,3 +37,8 @@ console.log(operate(num1,opp3,num2));
 console.log(operate(num1,opp4,num2));
 
 const container = document.querySelector("#container");
+const screen = document.createElement("div");
+screen.textContent = "Hofn";
+
+container.appendChild(screen);
+
