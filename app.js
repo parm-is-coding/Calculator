@@ -23,6 +23,31 @@ function operate(num1,opp,num2){
         console.log("Invalid Input");
     }
 } 
+function createButton(content){
+    let button = document.createElement('button');
+        button.setAttribute('class',"cButton");
+        button.textContent = content;
+        return button;
+}
+
+function createButtons(){
+    for (let i = 9; i >=0; i--){
+        container.appendChild(createButton(i));
+        if(i == 7){
+            let button = createButton("+");
+            button.setAttribute('id','add');
+            container.appendChild(button);
+        }else if(i == 4){
+            let button = createButton("-");
+            button.setAttribute('id','subtract');
+            container.appendChild(button);
+        }else if(i == 1){
+            let button = createButton("*");
+            button.setAttribute('id','multiply');
+            container.appendChild(button);
+        }
+    }
+}
 
 let num1 = 5;
 let opp1 = "+";
@@ -39,7 +64,5 @@ console.log(operate(num1,opp4,num2));
 const container = document.querySelector("#container");
 const screen = document.createElement("div");
 screen.setAttribute('id',"screen");
-//add screen styles to screen
-
 container.appendChild(screen);
-
+createButtons();
