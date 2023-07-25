@@ -38,7 +38,8 @@ console.log(operate(num1,opp4,num2));
 
 const container = document.querySelector("#container");
 const screen = document.createElement("div");
-screen.textContent = "Hofn";
+screen.setAttribute('id',"screen");
+//add screen styles to screen
 
 container.appendChild(screen);
 
