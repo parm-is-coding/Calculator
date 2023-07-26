@@ -17,3 +17,11 @@ body{
     height: 100px;
     width:450px;
 }
+
+#buttonContainer {
+    border: solid;
+    width: 450px;
+    height:520px;
+    margin-top: 20px;
+    
+}
