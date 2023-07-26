@@ -19,9 +19,28 @@ body{
 }
 
 #buttonContainer {
-    border: solid;
     width: 450px;
     height:520px;
     margin-top: 20px;
+    display:flex;
+    flex-wrap: wrap;
+    gap:30px;
+    padding-left: 25px;
     
+    
+}
+
+.cButton{
+    font-size: 50px;
+    padding-right: 25px;
+    padding-left: 25px;
+    
+}
+#dot, #subtract, #multiply{
+    padding-left: 32px;
+    padding-right: 32px;
+}
+#divide {
+    padding-left:35px;
+    padding-right:35px;
 }
