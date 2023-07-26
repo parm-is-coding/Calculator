@@ -47,6 +47,17 @@ function createButtons(){
             container.appendChild(button);
         }
     }
+    const dot = createButton(".");
+    const equal = createButton("=");
+    const divide = createButton("/");
+    dot.setAttribute('id',"dot");
+    equal.setAttribute('id',"equal");
+    divide.setAttribute('id', "divide");
+    container.appendChild(dot);
+    container.appendChild(equal);
+    container.appendChild(divide);
+   
+    
 }
 
 let num1 = 5;
