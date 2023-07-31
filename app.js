@@ -82,3 +82,8 @@ const buttonContainer = document.createElement('div');
 buttonContainer.setAttribute('id','buttonContainer');
 createButtons();
 container.appendChild(buttonContainer);
+
+const button = document.querySelectorAll('cButton');
+button.onclick = () => {
+    
+}
