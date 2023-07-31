@@ -80,7 +80,15 @@ let num1 = null;
 let opp = null;
 let num2 = null;
 for(let i = 0; i < 16; i++){
+    // last addition
     button[i].addEventListener('click', e => {
+        if(e.target.textContent == '+' ||
+        e.target.textContent == '-' ||
+        e.target.textContent == '*' ||
+        e.target.textContent == '/'){
+            opp = e.target.textContent;
+
+        }
         if(e.target.textContent == "=" && 
             num1 != null &&
             opp != null &&
@@ -90,7 +98,7 @@ for(let i = 0; i < 16; i++){
                 num2 = null;
                 opp = null;
         }
-        screen.textContent = display;
+        
     })    
 }
 
