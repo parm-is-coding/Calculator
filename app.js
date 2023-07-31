@@ -86,6 +86,7 @@ container.appendChild(buttonContainer);
 const button = document.querySelectorAll('button');
 for(let i = 0; i < 16; i++){
     button[i].addEventListener('click', e => {
+        screen.textContent += e.target.textContent;
         console.log(e.target.textContent);
     })    
 }
