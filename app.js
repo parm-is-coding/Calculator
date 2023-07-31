@@ -60,17 +60,8 @@ function createButtons(){
     
 }
 
-let num1 = 5;
-let opp1 = "+";
-let opp2 = "-";
-let opp3 = "*";
-let opp4 = "/";
-let num2 = 2;
 
-console.log(operate(num1,opp1,num2));
-console.log(operate(num1,opp2,num2));
-console.log(operate(num1,opp3,num2));
-console.log(operate(num1,opp4,num2));
+
 
 const container = document.querySelector("#container");
 // add screen to calculator
@@ -83,11 +74,23 @@ buttonContainer.setAttribute('id','buttonContainer');
 createButtons();
 container.appendChild(buttonContainer);
 
+// button Eventlistener
 const button = document.querySelectorAll('button');
+let num1 = null;
+let opp = null;
+let num2 = null;
 for(let i = 0; i < 16; i++){
     button[i].addEventListener('click', e => {
-        screen.textContent += e.target.textContent;
-        console.log(e.target.textContent);
+        if(e.target.textContent == "=" && 
+            num1 != null &&
+            opp != null &&
+            num2 != null){
+                screen.textContent = operate(num1,opp,num2); 
+                num1 =null;
+                num2 = null;
+                opp = null;
+        }
+        screen.textContent = display;
     })    
 }
 
