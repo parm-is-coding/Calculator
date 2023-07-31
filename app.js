@@ -83,7 +83,10 @@ buttonContainer.setAttribute('id','buttonContainer');
 createButtons();
 container.appendChild(buttonContainer);
 
-const button = document.querySelectorAll('cButton');
-button.onclick = () => {
-    
+const button = document.querySelectorAll('button');
+for(let i = 0; i < 16; i++){
+    button[i].addEventListener('click', e => {
+        console.log(e.target.textContent);
+    })    
 }
+
