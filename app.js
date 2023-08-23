@@ -36,14 +36,17 @@ function createButtons(){
         if(i == 7){
             let button = createButton("+");
             button.setAttribute('id','add');
+            button.setAttribute('class', 'operator');
             buttonContainer.appendChild(button);
         }else if(i == 4){
             let button = createButton("-");
             button.setAttribute('id','subtract');
+            button.setAttribute('class', 'operator');
             buttonContainer.appendChild(button);
         }else if(i == 1){
             let button = createButton("*");
             button.setAttribute('id','multiply');
+            button.setAttribute('class', 'operator');
             buttonContainer.appendChild(button);
         }
     }
@@ -51,8 +54,11 @@ function createButtons(){
     const equal = createButton("=");
     const divide = createButton("/");
     dot.setAttribute('id',"dot");
+    dot.setAttribute('class', 'operator');
     equal.setAttribute('id',"equal");
+    equal.setAttribute('class', 'operator');
     divide.setAttribute('id', "divide");
+    divide.setAttribute('class', 'operator');
     buttonContainer.appendChild(dot);
     buttonContainer.appendChild(equal);
     buttonContainer.appendChild(divide);
@@ -79,15 +85,17 @@ const button = document.querySelectorAll('button');
 let num1 = null;
 let opp = null;
 let num2 = null;
+let num1Flag = false;
 for(let i = 0; i < 16; i++){
     // last addition
     button[i].addEventListener('click', e => {
-        if(e.target.textContent == '+' ||
+        if((e.target.textContent == '+' ||
         e.target.textContent == '-' ||
         e.target.textContent == '*' ||
-        e.target.textContent == '/'){
+        e.target.textContent == '/')&& num1 != null){
             opp = e.target.textContent;
-
+            num1Flag = true;
+            screen.textContent += opp
         }
         if(e.target.textContent == "=" && 
             num1 != null &&
@@ -97,8 +105,14 @@ for(let i = 0; i < 16; i++){
                 num1 =null;
                 num2 = null;
                 opp = null;
+                num1Flag = false;
         }
-        
+        if(num1Flag == false ){
+            num1 += e.target.textContent;
+
+        }else if(num1Flag == true){
+            num2 += e.target.textContent;
+        }
     })    
 }
 
